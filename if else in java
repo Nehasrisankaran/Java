@@ -1,0 +1,15 @@
+package NehaJava;
+import java.util.*;
+public class mec{
+	public static void main(String args[])
+	{
+		Scanner sc =new Scanner(System.in);
+		double a=sc.nextDouble();
+		double b=sc.nextDouble();
+		if(a>b)
+		System.out.printf("Yes");
+		else {
+			System.out.printf("No");
+		}
+		}
+}
