@@ -1,0 +1,27 @@
+//count of even and odd numbers in an array
+package NehaJava;
+import java.util.*;
+public class JavaBasics{
+
+	public static void main(String ardgfd[]){
+		Scanner sc=new Scanner(System.in);
+		 int a=sc.nextInt();
+		int ar[]=new int[a];
+		for(int i=0;i<a;i++) {
+			ar[i]=sc.nextInt();
+		}
+		int even=0;
+		int odd=0;
+		for(int i=0;i<a;i++) {
+			if(ar[i]%2==0) {
+				even++;
+			}
+			else {
+				odd++;
+			}
+		}
+		System.out.println(even);
+		System.out.println(odd);
+		sc.close();
+		}
+	}
