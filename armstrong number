@@ -1,0 +1,36 @@
+import java.util.*;
+public class Main{
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        int a=sc.nextInt();
+        int l=a;
+        int sum=0;
+        int count=0;
+        while(l>0){
+            count++;
+            l/=10;
+        }
+        // System.out.print(count);
+        l=a;
+       // System.out.println(l);
+        while(l>0){
+            int v=l%10, x=count,b=1;
+            while(x>0)
+            {
+                b=b*v;
+                x--;
+            }
+           // System.out.print(b+" ");
+            sum+=b;
+            l=l/10;
+            
+        }
+        //System.out.print(sum);
+        if(sum==a){
+            System.out.print("Yes");
+        }
+        else{
+            System.out.print("No");
+        }
+    }
+}
