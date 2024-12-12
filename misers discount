@@ -1,0 +1,15 @@
+import java.util.*;
+public class Main{
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        double a=sc.nextDouble();
+        double b=sc.nextDouble();
+        int d=sc.nextInt();
+        double tp=a+b;
+        double di=tp*d/100;
+        double dp=tp-di;
+        System.out.printf("%.2f\n",tp);
+        System.out.printf("%.2f\n",dp);
+        System.out.printf("%.2f",di);
+    }
+}
