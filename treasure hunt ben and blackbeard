@@ -1,0 +1,13 @@
+import java.util.*;
+public class Main{
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        int a=sc.nextInt();
+        int b=sc.nextInt();
+        int bk=sc.nextInt();
+        int lb=a*b/100;
+        int rs=(a-lb)*bk/100;
+        int ot=(a-(lb+rs))/3;
+        System.out.print(lb+"\n"+rs+"\n"+ot);
+    }
+}
