@@ -1,5 +1,5 @@
 //BITONIC NUMBER:
-//MY SOL:
+//MY SOLUTION
 import java.util.*;
 public class Elite {
 	public static void main(String[] args)
