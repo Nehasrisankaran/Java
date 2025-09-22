@@ -1,0 +1,39 @@
+//TWISTED SUM ARRAY:
+import java.util.*;
+public class Elite {
+	public static void main(String[] args)
+	{
+				Scanner sc = new Scanner(System.in);
+				int size = sc.nextInt();
+				int arr[] = new int[size];
+				int arr1[] = new int[size];
+				// Each ele at even ind i, replace with sum(all elements to its right) 
+				// each ele odd ind, replace with product of all elements to its left
+				// reverse final array
+				for(int i=0;i<size;i++) {
+					arr[i] = sc.nextInt();
+				}//[2,3,4,5] [12,2,5,24]
+				for(int i=0;i<size;i++) {
+					if(i%2==0) {
+						int sum=0;
+						for(int j=i+1;j<size;j++) {
+							sum = sum+arr[j];
+						}
+						arr1[i] = sum;
+					} else {
+						int prod = 1;
+						for(int j=0;j<i;j++) {
+							prod = prod*arr[j];
+						}
+						arr1[i] = prod;
+					}
+				}
+				int arr2[] = new int[size];
+				for(int i=0;i<size;i++) {
+					arr2[i] = arr1[size-i-1];
+				}
+				for(int i=0;i<arr2.length;i++) {
+					System.out.print(arr2[i]+" ");
+				}
+			}
+		}
