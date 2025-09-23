@@ -1,12 +1,13 @@
+//prime or not in O(root n)
 import java.util.*;
 public class Elite {
 	public static void main(String[] args)
 	{
 		Scanner sc=new Scanner(System.in);
-		int a=sc.nextInt();
+		int a=sc.nextInt();//13
 		int ans=1;
-		for(int i=2;i*i<=a;i++) {
-			if(a%i==0) {
+		for(int i=2;i*i<=a;i++) {//i=2,4<=13;i++
+			if(a%i==0) {//13%2==0,NO ,gets back increments once,i=3,9<=13;i++,then 4,now i*i==16!<=13,so loop ends nothing satisfied if condition so ans is not changed so ans still ='s to 1 and hence its prime
 				ans=0;
 				break;
 			}
