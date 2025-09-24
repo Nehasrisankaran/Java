@@ -1,0 +1,33 @@
+package tervmec;
+//SUB ARRAY DIVISION(COUNT)
+import java.util.*;
+public class Elite {
+	public static void main(String[] args)
+	{
+		Scanner sc=new Scanner(System.in);
+		int a=sc.nextInt();
+		int ar[]=new int[a];
+		for(int i=0;i<a;i++) {
+			ar[i]=sc.nextInt();
+		}
+		int k=sc.nextInt();
+		int d=sc.nextInt();
+		int sum=0; 
+		int c=0;
+		for(int i=0;i<k;i++) {
+			sum+=ar[i];
+		} // Normal sum of first k elements 1+2
+		//sum=3
+		if(sum==d) {//3==3
+			c++;//c=1
+			}
+		for(int i=k;i<ar.length;i++) { //3
+			sum+=ar[i]-ar[i-k]; //3
+			if(sum==d) {
+				c++;
+			}
+		}//int c=0;
+		System.out.print(c);
+	}
+}
+		
