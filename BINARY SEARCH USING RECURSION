@@ -1,0 +1,35 @@
+package tervmec;
+//BINARY SEARCH USING RECURSION
+import java.util.*;
+public class Mon1 {
+	static void BinarySearch(int[] arr,int tar,int left,int right,int mid,int res) {
+		if(left>right) {
+			System.out.println("-1");
+			return;
+		}
+		if(arr[mid]==tar) {
+			System.out.print(mid);
+			return;
+		}
+		else if(arr[mid]>tar) {
+			right = mid-1;
+		} else {
+			left = mid+1;
+		} 
+		if(left<=right) {
+			mid = (left+right)/2;
+			BinarySearch(arr,tar,left,right,mid,res);
+		}
+	}
+	public static void main(String[] args) {
+		int a[] = {1,3,4,5,6,7};
+		int target = 6;
+		int left = 0;
+		int right = a.length-1;
+		int mid = (left+right)/2;
+		int res = -1;
+		BinarySearch(a,target,left,right,mid,res);
+		
+	}
+
+}
