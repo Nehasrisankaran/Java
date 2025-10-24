@@ -1,0 +1,12 @@
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+     HashMap<Integer,Integer>h=new HashMap<>();
+     int a[]={1,2,1,3,2};
+     for (int i=0;i<a.length;i++){
+         h.put(a[i],h.getOrDefault(a[i],0)+1);
+     } 
+     System.out.println(h);
+	}
+}
