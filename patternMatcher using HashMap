@@ -1,0 +1,28 @@
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+       String a="abba";
+       String b="dog cat cat dog";
+       String arr[]=b.split(" ");
+       HashMap<Character,String> h= new HashMap<>();
+       if(a.length()!=arr.length){
+           System.out.println(false);
+           return;
+       }
+       for(int i=0;i<a.length();i++){
+           char c=a.charAt(i);
+           String word=arr[i];
+           if(!h.containsKey(c))
+           {
+               h.put(c, word);
+           }
+           else{
+               if(!h.get(c).equals(arr[i])){
+                   System.out.println(false);
+                   return;
+               }
+           }
+       }
+       System.out.println(true);
+    }
+}
