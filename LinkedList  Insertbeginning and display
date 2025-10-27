@@ -1,0 +1,121 @@
+package Example;
+//LinkedList  Insertbeginning and display
+class Node{
+	int data;
+	Node next;
+	
+	Node(int d)  //20
+	{
+		data=d;  //20
+		next=null;
+	}
+}
+class LinkedList{
+	Node head=null;
+//	void insertbeg(int d)  //20
+//	{
+//		Node newnode=new Node(d); //20
+//		if(head==null)
+//		{
+//			head=newnode;  //head=400
+//		}
+//		else
+//		{
+//			newnode.next=head;
+//			head=newnode;   //head=500
+//		}
+//	}
+//	void delbeg()
+//	{
+//		if(head==null)
+//		{
+//			System.out.println("No data exist");
+//			return;
+//		}
+//		head=head.next;
+//	}
+//	void position(int p,int c)
+//	{
+//		if(head==null)
+//		{
+//			System.out.println("Ennada onnumay illa");
+//			return;
+//		}
+//		Node temp=head;
+//		while(temp!=null)
+//		{
+//			c++;
+//			if(c==p) {
+//			System.out.println(temp.data);
+//			return;
+//			}
+//			temp=temp.next;
+//		}
+//		System.out.println("position is greater than index");
+//	}
+	void insert(int d)
+	{
+		Node newnode=new Node(d);
+		if(head==null)
+		{
+			head=newnode;
+		}
+		else {
+			Node temp=head;
+			while(temp.next!=null)
+			{
+				temp=temp.next;
+			}
+			temp.next=newnode;
+		}
+	}
+//	void del() {
+//		if(head==null)
+//		{
+//			System.out.println("No data exist");
+//			return;
+//		}
+//		if(head.next==null) {
+//			head=null;
+//			return;
+//		}
+//		Node temp=head;
+//		while(temp.next.next!=null)
+//		{
+//			temp=temp.next;
+//		}
+//		temp.next=null;
+//	}
+	void display()
+	{
+		if(head==null)
+		{
+			System.out.println("Ennada onnumay illa");
+			return;
+		}
+		Node temp=head;
+		while(temp!=null)
+		{
+			System.out.println(temp.data);
+			temp=temp.next;
+		}
+	}
+}
+class Main{
+	
+	public static void main(String...d)
+	{
+	  LinkedList obj=new LinkedList(); 
+	  obj.insert(10);
+	  obj.insert(20);
+	  obj.insert(30);
+	  obj.insert(40);
+	  obj.insert(50);
+	  obj.insert(60);
+//	  obj.del();
+//	  obj.del();
+//	  obj.del();
+//	  obj.del();
+	 
+	}
+}
