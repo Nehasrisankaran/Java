@@ -1,0 +1,63 @@
+package Example;
+class Node{
+	int data;
+	Node next;
+	Node prev;
+	
+	Node(int d)  
+	{
+		data=d;  
+		next=null;
+		prev=null;
+	}
+}
+class LinkedList{
+	Node head=null,tail=null;
+	void insert(int d)
+	{
+		Node newnode=new Node(d);
+		if(head==null)
+		{
+			head=newnode;
+			tail=newnode;
+		}
+		else {
+			tail.next=newnode;
+			newnode.prev=tail;
+			tail=newnode;
+		}
+	}
+	void display()
+	{
+		Node temp=head;
+		while(temp!=null)
+		{
+			System.out.println(temp.data);
+			temp=temp.next;
+		}
+	}
+	void reverse()
+	{
+		Node temp=tail;
+		while(temp!=null)
+		{
+			System.out.println(temp.data);
+			temp=temp.prev;
+		}
+	}
+} 
+class Main{
+	
+	public static void main(String...d)
+	{
+	  LinkedList obj=new LinkedList(); 
+	 obj.insert(10);
+	 obj.insert(20);
+	 obj.insert(30);
+	 obj.insert(40);
+	 obj.reverse();
+	 obj.insert(60);
+	 System.out.println("-------------------------");
+	 obj.display();
+	}
+}
