@@ -1,0 +1,87 @@
+package Example;
+class Node{
+	int data;
+	Node left,right;
+	Node(int d)
+	{
+		data=d;
+		left=null;
+		right=null;
+	}
+}
+class Btree
+{
+	Node root=null;
+	void insert(int d)  //10 20 30 40 50
+	{
+		Node newnode=new Node(d);
+		if(root==null)
+		{
+			root=newnode;
+			return;
+		}   
+		Node temp=root;
+		while(true)
+		{
+			if(temp.left==null) {
+				temp.left=newnode;
+				break;
+			}
+			else if(temp.right==null)
+			{
+				temp.right=newnode;
+				break;
+			}
+			else if(temp.left!=null)
+				temp=temp.left;
+			else if(temp.right!=null)
+				temp=temp.right;
+		}
+	}
+	void postorder(Node temp)
+	{
+		if(temp==null)
+			return;
+		
+		inorder(temp.left);
+		inorder(temp.right);
+		System.out.println(temp.data);//40 50 20  30 10	
+	}
+	void inorder(Node temp)
+	{
+		if(temp==null)
+			return;
+		
+		inorder(temp.left);
+		System.out.println(temp.data);
+		inorder(temp.right);
+		//40 50 20  30 10	
+	}
+	void preorder(Node temp){
+		if(temp==null)
+			return;
+		System.out.println(temp.data);
+		inorder(temp.left);
+		inorder(temp.right);
+	}
+}
+class Main{
+	public static void main(String...d)
+	{
+       Btree obj=new Btree();
+       obj.insert(10);
+       obj.insert(20);
+       obj.insert(30);
+       obj.insert(40);
+       obj.insert(50);
+       System.out.println("inorder:");
+       obj.inorder(obj.root);
+       System.out.println("_________________________");
+       System.out.println("preorder");
+       obj.preorder(obj.root);
+       System.out.println("_________________________");
+       System.out.println("Post order");
+       obj.postorder(obj.root);
+    }
+  
+}
